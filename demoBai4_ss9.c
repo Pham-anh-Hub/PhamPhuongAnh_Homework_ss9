@@ -3,7 +3,7 @@
 int main(){
 	int length;
 	int num[length];
-	int number, index;
+	int number, index, temp=0;
 	printf("Moi nhap vao so phan tu trong mang  ");
 	scanf("%d",&length);
 do{
@@ -19,6 +19,7 @@ do{
 	scanf("%d",&choice);
 	switch(choice){
 		case 1:
+			temp=1; 
 			 num[length] ;
 			for (int i = 0; i<length; i++){
 				printf("Moi nhap vao so nguyen ");
@@ -26,17 +27,21 @@ do{
 				}
 			break;
 		case 2:
-			
+			if(temp==1){
 			printf("Mang sau khi nhap gia tri la: ");
 			for (int i = 0; i<length; i++){
 				printf("%d\t", num[i]);
 				}
+			}else{
+				printf("\nChua co du lieu, chon 1 de nhap vao mang"); 
+			} 
+			
 			
 		
 			break;
 		case 3:
-			 
-			printf("\nMoi nhap vao so nguyen muon them ");
+			 if(temp==1){
+			 	printf("\nMoi nhap vao so nguyen muon them ");
 			scanf("%d",&number);
 			printf("\nMoi nhap vao vi tri muon them (-1)");
 			scanf("%d",&index);
@@ -52,41 +57,54 @@ do{
 				printf("%d\t",num[i]);
 				}
 			length ++;
+			 }else{
+			 	printf("\nChua co du lieu, chon 1 de nhap vao mang");	
+			 } 
+			
 			break;
 			
 		case 4:
-			
-			printf("\nMoi nhap vao vi tri muon thay the  (-1)");
-			scanf("%d",&index);
-			printf("\nMoi nhap vao so nguyen muon thay the ");
-			scanf("%d",&number);
-			
-			
-			for(int i = length; i>=index-1;i--){
-			//Dich chuyen  
-				 
-			}
-			num[index] = number;//chen gia tri do vao vi tri index
-			
-			//In ra ket qua
-			for(int i = 0; i<length; i++){
-				printf("%d\t",num[i]);
+			if(temp==1){
+				printf("\nMoi nhap vao vi tri muon thay the  (-1)");
+				scanf("%d",&index);
+				printf("\nMoi nhap vao so nguyen muon thay the ");
+				scanf("%d",&number);
+				
+				
+				for(int i = length; i>=index-1;i--){
+				//Dich chuyen  
+					 
 				}
+				num[index] = number;//chen gia tri do vao vi tri index
+				
+				//In ra ket qua
+				for(int i = 0; i<length; i++){
+					printf("%d\t",num[i]);
+					}
+			}else{
+				printf("\nChua co du lieu, chon 1 de nhap vao mang");
+			} 
+			
 			break;
 		case 5:
-			for(int i=0; i<length ; i++){  //())
-			printf("%d\t",num[i]); 
-			}
-			printf("\nMoi nhap vao vi tri muon xoa (0-%d) ",length -1 );
-			scanf("%d", &index);
-	
-			for ( int i = index; i<length-1; i++){
-				num[i] = num[i+1]; 
-			}
-			for (int i=0; i<length-1; i++){
-				printf("%d\t", num[i]);
+			if(temp == 1){
+				for(int i=0; i<length ; i++){  //())
+				printf("%d\t",num[i]); 
 				}
-			length--;
+				printf("\nMoi nhap vao vi tri muon xoa (0-%d) ",length -1 );
+				scanf("%d", &index);
+		
+				for ( int i = index; i<length-1; i++){
+					num[i] = num[i+1]; 
+				}
+				for (int i=0; i<length-1; i++){
+					printf("%d\t", num[i]);
+					}
+				length--;
+			}else{
+				printf("\nChua co du lieu, chon 1 de nhap vao mang");
+			} 
+			
 			 
 			break;
 		case 6:
